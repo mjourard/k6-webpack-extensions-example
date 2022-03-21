@@ -22,6 +22,8 @@
     "webpack-glob-entries": "^1.0.1"
   },
   "scripts": {
-    "start": "webpack"
+    "start": "webpack",
+    "docker:build": "docker build -t k6_extensions_example_mjourard .",
+    "docker:run": "docker run -v $(pwd)/dist:/home/k6/dist -v $(pwd)/data:/home/k6/data --rm k6_extensions_example_mjourard run dist/post-file-test.js"
   }
 }
